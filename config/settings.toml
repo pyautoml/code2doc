@@ -1,0 +1,77 @@
+[app]
+GPU=1 # ON - min 1 GPU of 8GB VRAM
+logging=1 # ON
+max_workers=10
+logging_level = "DEBUG"
+logger_name = "Code2Doc"
+directories=["documentation", "repositories", "database"] # do not change
+
+[template]
+writer="config/templates/writer_template.md"
+reviewer="config/templates/reviewer_template.md"
+documentation="config/templates/documentation.md"
+
+[processing]
+chunk_size = 2000
+chunk_overlap = 200
+batch_size = 128
+large_file_threshold = 10_000_000  # 10MB
+
+[ollama]
+num_gpu_layers = 100  # Max GPU offload
+endpoint_generate = "/api/generate"
+endpoint_pull = "/api/pull"
+endpoint_tags = "/api/tags"
+host="http://localhost:11434"
+ollama_models_path="" # path where you store ollama models locally
+
+[embedding]
+model = "nomic-embed-text:latest"
+embedding_dim = 768  # nomic-embed-text dimension
+num_gpu_layers = 20
+
+[llm]
+writer_model = "llama3.1:8b"
+reviewer_model = "qwen2.5:7b"
+writer_temperature = 0.1
+reviewer_temperature=0.0
+num_gpu_layers = 30
+keep_alive=-1
+model_3b_timeout=300
+model_8b_timeout=480
+
+[cuda]
+CUDA_HOME="" # path where you have CUDA installed
+
+[huggingface]
+HF_HOME="" # if not provided, HF will use C drive by default
+HF_HUB_CACHE="" # if not provided, HF will use C drive by default
+HF_DATASETS_CACHE="" # if not provided, HF will use C drive by default
+TRANSFORMERS_VERBOSITY="error"
+HF_HUB_VERBOSITY="error"
+ANONYMIZED_TELEMETRY=0
+DISABLE_TELEMETRY=1
+DO_NOT_TRACK=1
+TELEMETRY_DISABLED=1
+HF_HUB_DISABLE_TELEMETRY=1
+HF_DISABLE_SYMLINKS=1
+HF_HUB_DISABLE_SYMLINKS_WARNING=1
+
+[transformers]
+TRANSFORMERS_VERBOSITY="error"
+TF_CPP_MIN_LOG_LEVEL=3
+
+[storage]
+database = "storage/database"
+documentation = "storage/documentation"
+repositories = "storage/repositories"
+
+[database]
+max_cache_size = "10GB"
+qdrant_path = "storage/database/qdrant"
+sqlite_path = "storage/database/files.db"
+
+[network]
+# proxy and headers cannot be empty string like proxy="" !
+# proxy="http://.."
+# headers = {}
