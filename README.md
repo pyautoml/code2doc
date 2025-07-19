@@ -1,4 +1,9 @@
-# Lincense & Usage
+<p>
+    <img style="display: block; margin: 0 auto;" src="https://github.com/pyautoml/rotating-proxy/blob/main/circuit_rotator_cover.png" alt="pyautoml Code2Doc AI-enchanced automatic documentation"/>
+</p>
+
+
+# Lincense & Usage 🐍
 * Version: 1.0.0
 * Author: pyautoml
 * Github: https://github.com/pyautoml
