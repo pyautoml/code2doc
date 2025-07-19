@@ -1,5 +1,5 @@
 <p>
-    <img style="display: block; margin: 0 auto;" src="https://github.com/pyautoml/rotating-proxy/blob/main/circuit_rotator_cover.png" alt="pyautoml Code2Doc AI-enchanced automatic documentation"/>
+    <img style="display: block; margin: 0 auto;" src="https://github.com/pyautoml/code2doc/blob/master/code2doc_cover_pyautoml.png" alt="pyautoml Code2Doc AI-enchanced automatic documentation"/>
 </p>
 
 
